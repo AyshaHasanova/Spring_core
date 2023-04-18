@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="card" class="org.example.Card" scope="prototype">
+        <property name="cardNumber" value="*4466"/>
+        <property name="balance" value="45.5"/>
+        <property name="cardStatus" value="ACTIVE"/>
+        <property name="bankAccount" ref="account"/>
+    </bean>
+
+    <bean id="account" class="org.example.BankAccount" scope="prototype">
+        <property name="balance" value="45.5"/>
+        <property name="customerId" value="456783"/>
+        <property name="iban" value="A023534534534534dfgfd435534"/>
+    </bean>
+</beans>
